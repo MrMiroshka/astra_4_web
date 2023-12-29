@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<maven.compiler.target>17</maven.compiler.target>
 		<maven.compiler.source>17</maven.compiler.source>
+		<start-class>ru.miroshka.astra4backclient.BackclientServiceApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,6 +51,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.2.0</version>
 				<configuration>
 					<excludes>
 						<exclude>

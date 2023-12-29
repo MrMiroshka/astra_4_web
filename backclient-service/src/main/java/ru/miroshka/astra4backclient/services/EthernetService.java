@@ -1,4 +1,4 @@
-package ru.miroshka.astra4backclient.serices;
+package ru.miroshka.astra4backclient.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

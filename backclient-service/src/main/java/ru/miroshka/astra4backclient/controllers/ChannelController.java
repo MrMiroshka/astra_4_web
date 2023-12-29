@@ -4,25 +4,31 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+import ru.miroshka.astra4backclient.entities.Process;
+import ru.miroshka.astra4backclient.exceptios.errors.ResourceNotFoundException;
+import ru.miroshka.astra4backclient.services.ChannelService;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/channels")
 public class ChannelController {
+    private final ChannelService channelService;
+
     @GetMapping("/find/all")
     @ResponseStatus(HttpStatus.OK)
-    public String getAllChannels(@RequestParam Integer a) throws Exception {
-        log.info("Запрос всех каналов");
-        if (a==1){throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Все пропало!");}
-        return "Запрос всех каналов";
-        //return ChannelMapper.channelDtoListFromChannelList()
+    public Optional<List<Process>> getAllChannels() throws Exception {
+        List<Process> listProcess = channelService.getProcessAstraChannels();
+        return Optional.ofNullable(listProcess.isEmpty() ? null : listProcess);
     }
 
-    @GetMapping("/find")
+    @GetMapping("/find/all_pages")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public String getChannels(
-    //public Page<String> getChannels(
+            //public Page<String> getChannels(
             @RequestParam(name = "p", defaultValue = "1") Integer page,
             @RequestParam(name = "idTicket", required = false) Long idTicket,
             @RequestParam(name = "pageSize", defaultValue = "5") Integer pageSize
@@ -34,11 +40,17 @@ public class ChannelController {
         //return commentService.find(idTicket, page, pageSize).map(p -> commentConverter.entityToDtoRequest(p));
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/find")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public String findById(@PathVariable Long id){
-        log.info("Запрос канала с id - " + id);
-        return "Запрос канала с id - " + id;
+    public String findById(
+            @RequestParam(required = false, name = "pid", defaultValue = "-1") Long pid,
+            @RequestParam String nameChannel
+    ) {
+        if (pid <= 0) {
+            pid = -1L;
+        }
+        log.info("Запрос канала с id - " + pid + " nameChannel - " + nameChannel);
+        return "Запрос канала с id - " + pid + " nameChannel - " + nameChannel;
     }
 
     @PostMapping("/create")
@@ -51,7 +63,7 @@ public class ChannelController {
 
     @PutMapping("/update/{Id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void updateChannel(){
+    public void updateChannel() {
 
     }
 

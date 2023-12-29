@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.miroshka.astra4backclient.converters.EthernetMapper;
 import ru.miroshka.astra4backclient.dto.EthernetV4Dto;
-import ru.miroshka.astra4backclient.serices.EthernetService;
+import ru.miroshka.astra4backclient.services.EthernetService;
 import java.util.List;
 
 @RestController
