@@ -15,8 +15,12 @@ import java.util.List;
 public class EthernetService {
     private final EthernetRepository ethernetRepository;
 
-    public List<Ethernet> getNetworkInterfacesV4() {
-        return ethernetRepository.getNetworkInterfacesV4();
+    public List<Ethernet> getNetworkInterfacesV4(boolean lo) {
+        return ethernetRepository.getNetworkInterfacesV4(lo);
+    }
+
+    public void addNetworkInterfaceV4() {
+        ethernetRepository.addNetworkInterfaceV4();
     }
 
 }

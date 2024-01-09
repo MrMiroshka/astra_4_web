@@ -8,8 +8,27 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EthernetV4Dto {
-    private Long id;
     private String title;
-    private String displayName;
+    private String fullName;
     private String ipV4;
+    private String physicalInterface;
+    private String netmask;
+    private String network;
+    private String broadcast;
+    private String mtu;
+    private String gateway;
+    private String isPhysicalInterface;
+
+    public EthernetV4Dto(String title, String ipV4) {
+        this.title = title;
+        this.ipV4 = ipV4;
+        this.fullName = "";
+        this.physicalInterface = "";
+        this.netmask = "";
+        this.network = "";
+        this.broadcast = "";
+        this.mtu = "";
+        this.gateway = "";
+        this.isPhysicalInterface = "";
+    }
 }

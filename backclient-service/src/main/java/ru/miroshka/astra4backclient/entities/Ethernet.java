@@ -8,9 +8,26 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ethernet {
-    private Long id;
     private String title;
-    private String displayName;
     private String ipV4;
     private String ipV6;
+    private String physicalInterface;
+    private String netmask;
+    private String network;
+    private String broadcast;
+    private String mtu;
+    private String gateway;
+
+    public Ethernet(String title, String ipV4) {
+        this.title = title;
+        this.ipV4 = ipV4;
+        this.ipV6 = "";
+        this.netmask = "";
+        this.broadcast = "";
+        this.network = "";
+        this.physicalInterface = "";
+        this.mtu="";
+        this.gateway="";
+    }
+
 }

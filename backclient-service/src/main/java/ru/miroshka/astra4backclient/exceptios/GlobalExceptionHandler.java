@@ -34,4 +34,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(new AppError(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 e.getMessage()), HttpStatus.NOT_FOUND);
     }
+
+    //@ExceptionHandler
 }
