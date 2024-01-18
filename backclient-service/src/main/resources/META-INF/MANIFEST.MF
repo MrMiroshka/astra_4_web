@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Main-Class: ru.miroshka.astra4backclient.BackClientServiceApplication
+Class-Path: spring-boot-starter-tomcat-3.2.0.jar slf4j-api-2.0.9.jar jak
+ arta.annotation-api-2.1.1.jar jackson-annotations-2.15.3.jar jackson-da
+ tatype-jsr310-2.15.3.jar spring-beans-6.1.1.jar netty-codec-4.1.101.Fin
+ al.jar spring-boot-autoconfigure-3.2.0.jar netty-buffer-4.1.101.Final.j
+ ar netty-resolver-dns-4.1.101.Final.jar spring-webmvc-6.1.1.jar jackson
+ -module-parameter-names-2.15.3.jar reactor-netty-http-1.1.13.jar spring
+ -expression-6.1.1.jar reactor-netty-core-1.1.13.jar netty-codec-dns-4.1
+ .101.Final.jar reactor-core-3.6.0.jar spring-boot-3.2.0.jar jul-to-slf4
+ j-2.0.9.jar netty-transport-4.1.101.Final.jar spring-boot-configuration
+ -processor-3.2.0.jar netty-transport-classes-epoll-4.1.101.Final.jar ja
+ ckson-core-2.15.3.jar netty-handler-4.1.101.Final.jar logback-classic-1
+ .4.11.jar spring-aop-6.1.1.jar reactive-streams-1.0.4.jar tomcat-embed-
+ websocket-10.1.16.jar spring-boot-starter-webflux-3.2.0.jar spring-jcl-
+ 6.1.1.jar netty-codec-socks-4.1.101.Final.jar logback-core-1.4.11.jar l
+ og4j-api-2.21.1.jar spring-boot-starter-logging-3.2.0.jar tomcat-embed-
+ el-10.1.16.jar snakeyaml-2.2.jar netty-handler-proxy-4.1.101.Final.jar 
+ spring-boot-starter-3.2.0.jar netty-common-4.1.101.Final.jar spring-web
+ -6.1.1.jar netty-codec-http2-4.1.101.Final.jar spring-context-6.1.1.jar
+  jackson-databind-2.15.3.jar netty-resolver-dns-native-macos-4.1.101.Fi
+ nal-osx-x86_64.jar spring-boot-starter-web-3.2.0.jar netty-transport-na
+ tive-epoll-4.1.101.Final-linux-x86_64.jar spring-webflux-6.1.1.jar jack
+ son-datatype-jdk8-2.15.3.jar netty-codec-http-4.1.101.Final.jar microme
+ ter-observation-1.12.0.jar spring-boot-starter-reactor-netty-3.2.0.jar 
+ micrometer-commons-1.12.0.jar log4j-to-slf4j-2.21.1.jar spring-boot-sta
+ rter-json-3.2.0.jar lombok-1.18.30.jar tomcat-embed-core-10.1.16.jar ne
+ tty-resolver-4.1.101.Final.jar netty-resolver-dns-classes-macos-4.1.101
+ .Final.jar netty-transport-native-unix-common-4.1.101.Final.jar spring-
+ core-6.1.1.jar
+

@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackclientServiceApplication {
+public class BackClientServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackclientServiceApplication.class, args);
+		SpringApplication.run(BackClientServiceApplication.class, args);
 	}
 
 }
+

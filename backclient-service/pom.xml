@@ -10,24 +10,21 @@
 	</parent>
 	<groupId>ru.miroshka</groupId>
 	<artifactId>astra4backclient</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>backclient-service</name>
-	<description>backclient-service</description>
+	<version>0.0.1</version>
+	<name>back-client-service</name>
+	<description>back-client-service</description>
 	<properties>
 		<java.version>17</java.version>
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<start-class>ru.miroshka.astra4backclient.BackclientServiceApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -38,6 +35,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -45,6 +51,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.2.0</version>
 				<configuration>
 					<excludes>
 						<exclude>
