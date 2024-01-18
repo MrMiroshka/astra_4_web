@@ -1,0 +1,23 @@
+server:
+  error:
+    include-message: always
+  port: 8778
+  servlet:
+    context-path: /astra4
+
+
+logging:
+  pattern:
+    file: "%d %-2level [%thread] %logger{0} : %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  level:
+    org.springframework.web: warn
+    ru.miroshka.astra4backclient: warn
+    ru.miroshka.astra4backclient.controllers: info
+  file:
+    name: logs/production_profile_app.log
+  logback:
+    rollingpolicy:
+      max-file-size: "10MB"
+      max-history: 3
+      file-name-pattern: ${LOG_FILE}/astra4.%d{yyyyMMdd}.%i.gz
