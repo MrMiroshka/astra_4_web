@@ -18,7 +18,11 @@ public class EthernetMapper {
             isPhysicalInterface = "false";
             fullName = ethernet.getPhysicalInterface() + ":" + ethernet.getTitle() + ":" + ethernet.getIpV4();
         } else {
-            isPhysicalInterface = "true";
+            if (!ethernet.getInMemory()) {
+                isPhysicalInterface = "true";
+            } else {
+                isPhysicalInterface = "";
+            }
             fullName = ethernet.getTitle() + ":" + ethernet.getIpV4();
         }
         return new EthernetV4Dto(
@@ -31,8 +35,9 @@ public class EthernetMapper {
                 ethernet.getBroadcast(),
                 ethernet.getMtu(),
                 ethernet.getGateway(),
-                isPhysicalInterface
-                );
+                isPhysicalInterface,
+                ethernet.getInMemory().toString()
+        );
 
     }
 
@@ -46,7 +51,8 @@ public class EthernetMapper {
                 ethernetDto.getNetwork(),
                 ethernetDto.getBroadcast(),
                 ethernetDto.getMtu(),
-                ethernetDto.getGateway()
+                ethernetDto.getGateway(),
+                true
         );
     }
 

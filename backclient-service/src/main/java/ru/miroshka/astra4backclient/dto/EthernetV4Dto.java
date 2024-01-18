@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class EthernetV4Dto {
     private String title;
     private String fullName;
@@ -18,6 +18,7 @@ public class EthernetV4Dto {
     private String mtu;
     private String gateway;
     private String isPhysicalInterface;
+    private String inMemory;
 
     public EthernetV4Dto(String title, String ipV4) {
         this.title = title;
@@ -30,5 +31,6 @@ public class EthernetV4Dto {
         this.mtu = "";
         this.gateway = "";
         this.isPhysicalInterface = "";
+        this.inMemory="";
     }
 }

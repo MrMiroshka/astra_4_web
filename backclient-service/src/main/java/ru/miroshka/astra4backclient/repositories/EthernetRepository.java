@@ -61,6 +61,7 @@ public class EthernetRepository {
                         for (int i = 0; i < resultEthernetList.size(); i++) {
                             if (resultEthernetList.get(i).getTitle().equalsIgnoreCase(stringArray[1])) {
                                 ethernet = resultEthernetList.get(i);
+                                ethernet.setInMemory(false);
                                 break;
                             }
                         }

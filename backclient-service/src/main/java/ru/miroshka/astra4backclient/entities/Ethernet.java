@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Ethernet {
     private String title;
     private String ipV4;
@@ -17,6 +16,7 @@ public class Ethernet {
     private String broadcast;
     private String mtu;
     private String gateway;
+    private Boolean inMemory;
 
     public Ethernet(String title, String ipV4) {
         this.title = title;
@@ -28,6 +28,7 @@ public class Ethernet {
         this.physicalInterface = "";
         this.mtu="";
         this.gateway="";
+        this.inMemory = true;
     }
 
 }
