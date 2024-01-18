@@ -47,7 +47,7 @@ public class EthernetRepository {
         return resultEthernetList;
     }
 
-    private List<Ethernet> parsNetworkInterfaces(List<Ethernet> resultEthernetList) {
+    private void parsNetworkInterfaces(List<Ethernet> resultEthernetList) {
         try (Scanner netInterfaces = new Scanner(new File("/etc/network/interfaces"/*"file.txt"*/))) {
             Ethernet ethernet = null;
             //boolean isInterface = false;
@@ -94,7 +94,6 @@ public class EthernetRepository {
         } catch (FileNotFoundException exp) {
             throw new RuntimeException(exp);
         }
-        return resultEthernetList;
     }
 
 }

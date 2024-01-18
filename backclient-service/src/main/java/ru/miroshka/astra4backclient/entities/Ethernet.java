@@ -2,7 +2,6 @@ package ru.miroshka.astra4backclient.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
