@@ -5,10 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import ru.miroshka.astra4backclient.exceptios.errors.FieldsValidationError;
-import ru.miroshka.astra4backclient.exceptios.errors.GetProcessServerException;
-import ru.miroshka.astra4backclient.exceptios.errors.ResourceNotFoundException;
-import ru.miroshka.astra4backclient.exceptios.errors.ValidationException;
+import ru.miroshka.astra4backclient.exceptios.errors.*;
 
 
 @ControllerAdvice
@@ -34,4 +31,18 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(new AppError(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 e.getMessage()), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<AppError> catchGetInfoNetworkInterfaceServerException(GetInfoNetworkInterfaceServerException e) {
+        log.error(e.getMessage(), e);
+        return new ResponseEntity<>(new AppError(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                e.getMessage()), HttpStatus.NOT_FOUND);
+    }
+    //@ExceptionHandler
+/*    @ExceptionHandler
+    public ResponseEntity<AppError> appErrorResponseEntity(RuntimeException e) {
+        log.error(e.getMessage(), e);
+        return new ResponseEntity<>(new AppError(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                e.getMessage()), HttpStatus.NOT_FOUND);
+    }*/
 }
