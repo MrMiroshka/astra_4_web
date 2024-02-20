@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EthernetV4Dto {
     private String title;
+    private String vlanId;
     private String fullName;
     private String ipV4;
     private String physicalInterface;
@@ -17,11 +18,12 @@ public class EthernetV4Dto {
     private String broadcast;
     private String mtu;
     private String gateway;
-    private String isPhysicalInterface;
+    private Boolean isPhysicalInterface;
     private String inMemory;
 
     public EthernetV4Dto(String title, String ipV4) {
         this.title = title;
+        this.vlanId= "";
         this.ipV4 = ipV4;
         this.fullName = "";
         this.physicalInterface = "";
@@ -30,7 +32,22 @@ public class EthernetV4Dto {
         this.broadcast = "";
         this.mtu = "";
         this.gateway = "";
-        this.isPhysicalInterface = "";
-        this.inMemory="";
+        this.isPhysicalInterface = true;
+        this.inMemory = "";
+    }
+
+    public EthernetV4Dto(String title, String ipV4, String vlanId) {
+        this.title = title;
+        this.vlanId = vlanId;
+        this.ipV4 = ipV4;
+        this.fullName = "";
+        this.physicalInterface = "";
+        this.netmask = "";
+        this.network = "";
+        this.broadcast = "";
+        this.mtu = "";
+        this.gateway = "";
+        this.isPhysicalInterface = false;
+        this.inMemory = "";
     }
 }
